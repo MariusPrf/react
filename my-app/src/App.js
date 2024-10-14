@@ -34,6 +34,11 @@ const GoalList = () => {
     }
   };
 
+  const removeGoal = (index) => {
+    const updatedGoals = sampleGoals.filter((_, i) => i !== index);
+    setGoals(updatedGoals);
+  };
+
   return (
       <div style={styles.container}>
         <div style={styles.inputRow}>
@@ -52,6 +57,12 @@ const GoalList = () => {
           {sampleGoals.map((goal, index) => (
               <li key={index} style={styles.goalItem}>
                 {goal}
+                <button
+                    onClick={() => removeGoal(index)}
+                    style={styles.deleteButton}
+                >
+                  ✖
+                </button>
               </li>
           ))}
         </ul>
@@ -92,6 +103,15 @@ const styles = {
   goalItem: {
     padding: "8px",
     borderBottom: "1px solid #ddd",
+  },
+  deleteButton: {
+    marginLeft: "10px",
+    padding: "4px 8px",
+    backgroundColor: "#dc3545",
+    color: "#fff",
+    border: "none",
+    borderRadius: "4px",
+    cursor: "pointer",
   },
 };
 
