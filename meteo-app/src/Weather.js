@@ -10,11 +10,12 @@ const Weather = () => {
     const lat = "45.750000";
     const lon = "4.850000";
 
+
     useEffect(() => {
         const fetchWeatherData = async () => {
             try {
                 const response = await fetch(
-                    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
+                    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=fr`
                 );
 
                 if (!response.ok) {
