@@ -6,7 +6,7 @@ const Weather = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    const API_KEY = "d8f8af9077af33160c359b1076d3d3fa";  
+    const API_KEY = "d8f8af9077af33160c359b1076d3d3fa";
     const lat = "45.750000";
     const lon = "4.850000";
 
