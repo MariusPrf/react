@@ -16,7 +16,7 @@ const WeatherDisplay = ({ data }) => {
                 </thead>
                 <tbody>
                 {data.map((forecast, index) => {
-                    const dateTime = new Date(forecast.dt * 1000);  // Convertir l'horodatage Unix en date
+                    const dateTime = new Date(forecast.dt * 1000);
                     const date = dateTime.toLocaleDateString();
                     const time = dateTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
@@ -26,6 +26,8 @@ const WeatherDisplay = ({ data }) => {
                             <td>{time}</td>
                             <td>{forecast.main.temp} °C</td>
                             <td>{forecast.weather[0].description}</td>
+                            <img src={`http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png`}
+                                 alt="Weather Icon"/>
                         </tr>
                     );
                 })}
